@@ -26,15 +26,15 @@ int main (int argc, char *argv[]) {
                     buscarProducto(productos, precios, num_ingresados);
                     break;
                 case 3:
-                    printf("Fin del programa.\n");
+                    printf("Fin del programa\n");
                     break;
                 default:
-                    printf("Error. Escoja una opcion valida.\n");
+                    printf("Error. Escoja una opcion valida\n");
             }
 
         } while(opcion != 3);
 
-        printf("¿Desea ingresar nuevos productos y repetir el proceso? (1. Si 2. No): ");
+        printf("¿Desea ingresar nuevos productos y repetir el proceso? (1. Si 2. No):");
         scanf("%d", &continuar);
         getchar(); 
 

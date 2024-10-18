@@ -74,14 +74,14 @@ void mostrarResultados(float precios[NumProduct], int num_ingresados) {
 
 void buscarProducto(char productos[NumProduct][30], float precios[NumProduct], int num_ingresados) {
     if (num_ingresados == 0) {
-        printf("No hay productos ingresados.\n");
+        printf("No hay productos ingresados\n");
         return;
     }
 
     char producto_buscado[30];
     int encontrado = 0;
 
-    printf("Ingrese el nombre del producto a buscar: ");
+    printf("Ingrese el nombre del producto a buscar:");
     fgets(producto_buscado, 30, stdin);
 
     for (int j = 0; producto_buscado[j] != '\0'; j++) {
@@ -108,6 +108,6 @@ void buscarProducto(char productos[NumProduct][30], float precios[NumProduct], i
     }
 
     if (!encontrado) {
-        printf("Producto no encontrado o inexistente.\n");
+        printf("Producto no encontrado o inexistente\n");
     }
 }
