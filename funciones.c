@@ -37,7 +37,7 @@ int ingresarProductos(char productos[NumProduct][30], float precios[NumProduct])
         num_ingresados++;
 
         if (num_ingresados < NumProduct) {
-            printf("¿Desea ingresar otro producto? (1. Si 2. No): ");
+            printf("¿Desea ingresar otro producto? (1. Si 2. No):");
             scanf("%d", &continuar);
             getchar(); 
             if (continuar == 2) {
