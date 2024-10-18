@@ -23,12 +23,6 @@ int ingresarProductos(char productos[NumProduct][30], float precios[NumProduct])
     while (num_ingresados < NumProduct) {
         printf("Ingrese el nombre del producto %d: ", num_ingresados + 1);
         fgets(productos[num_ingresados], 30, stdin);
-        for (int j = 0; productos[num_ingresados][j] != '\0'; j++) {
-            if (productos[num_ingresados][j] == '\n') {
-                productos[num_ingresados][j] = '\0';
-                break;
-            }
-        }
 
         printf("Ingrese el precio del producto %d: ", num_ingresados + 1);
         scanf("%f", &precios[num_ingresados]);  
@@ -37,7 +31,7 @@ int ingresarProductos(char productos[NumProduct][30], float precios[NumProduct])
         num_ingresados++;
 
         if (num_ingresados < NumProduct) {
-            printf("¿Desea ingresar otro producto? (1. Si 2. No):");
+            printf("¿Desea ingresar otro producto? (1. Si 2. No): ");
             scanf("%d", &continuar);
             getchar(); 
             if (continuar == 2) {
@@ -81,15 +75,8 @@ void buscarProducto(char productos[NumProduct][30], float precios[NumProduct], i
     char producto_buscado[30];
     int encontrado = 0;
 
-    printf("Ingrese el nombre del producto a buscar:");
+    printf("Ingrese el nombre del producto a buscar: ");
     fgets(producto_buscado, 30, stdin);
-
-    for (int j = 0; producto_buscado[j] != '\0'; j++) {
-        if (producto_buscado[j] == '\n') {
-            producto_buscado[j] = '\0';
-            break;
-        }
-    }
 
     for (int i = 0; i < num_ingresados; i++) {
         int Buscador = 1; // Suponemos que son iguales con el producto actual que se va a comparar

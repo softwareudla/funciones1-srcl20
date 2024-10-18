@@ -1,3 +1,4 @@
+
 #define NumProduct 10  
 
 int ingresarProductos(char productos[NumProduct][30], float precios[NumProduct]);

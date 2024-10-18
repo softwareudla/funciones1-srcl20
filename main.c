@@ -34,7 +34,7 @@ int main (int argc, char *argv[]) {
 
         } while(opcion != 3);
 
-        printf("¿Desea ingresar nuevos productos y repetir el proceso? (1. Si 2. No):");
+        printf("¿Desea ingresar nuevos productos y repetir el proceso? (1. Si 2. No): ");
         scanf("%d", &continuar);
         getchar(); 
 
