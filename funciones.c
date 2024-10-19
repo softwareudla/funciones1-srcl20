@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <string.h>
 #include "funciones.h"
 
 #define NumProduct 10  
@@ -80,16 +81,8 @@ void buscarProducto(char productos[NumProduct][30], float precios[NumProduct], i
     fgets(producto_buscado, 30, stdin);
 
     for (int i = 0; i < num_ingresados; i++) {
-        int Buscador = 1; // Suponemos que son iguales con el producto actual que se va a comparar
-        for (int j = 0; producto_buscado[j] != '\0' && productos[i][j] != '\0'; j++) {
-            if (producto_buscado[j] != productos[i][j]) {
-                Buscador = 0; // Si algún carácter no coincide, el producto comparado no es igual
-                break;
-            }
-        }
-        // Si son iguales, mostrar el precio
-        if (Buscador) {
-            printf("El precio del producto '%s' es: %.2f\n", productos[i], precios[i]);
+        if (strcmp(producto_buscado, productos[i]) == 0) {
+            printf("El precio del producto %s es: %.2f\n", productos[i], precios[i]);
             encontrado = 1;
             break;
         }
