@@ -1,14 +1,15 @@
 #include <stdio.h>
+#include <math.h>
 #include "funciones.h"
 
 #define NumProduct 10  
 
 int menu() {
     int opcion;
-    printf("1. Ver resultados\n");
-    printf("2. Buscar producto\n");
-    printf("3. Salir\n");
-    printf("Elija una opcion:");
+    printf("1.Ver resultados\n");
+    printf("2.Buscar producto\n");
+    printf("3.Salir\n");
+    printf("Elija una opcion: ");
     scanf("%d", &opcion);
     getchar(); 
     return opcion;
@@ -31,7 +32,7 @@ int ingresarProductos(char productos[NumProduct][30], float precios[NumProduct])
         num_ingresados++;
 
         if (num_ingresados < NumProduct) {
-            printf("¿Desea ingresar otro producto? (1. Si 2. No): ");
+            printf("¿Desea ingresar otro producto? (1.Si 2.No): ");
             scanf("%d", &continuar);
             getchar(); 
             if (continuar == 2) {
@@ -45,11 +46,11 @@ int ingresarProductos(char productos[NumProduct][30], float precios[NumProduct])
 
 void mostrarResultados(float precios[NumProduct], int num_ingresados) {
     if (num_ingresados == 0) {
-        printf("No hay productos ingresados.\n");
+        printf("No hay productos ingresados\n");
         return;
     }
 
-    float total = 0, maximo = precios[0], minimo = precios[0];
+    float total= 0, maximo= precios[0], minimo= precios[0];
 
     for (int i = 0; i < num_ingresados; i++) {
         total += precios[i];
@@ -57,12 +58,12 @@ void mostrarResultados(float precios[NumProduct], int num_ingresados) {
         if (precios[i] < minimo) minimo = precios[i];
     }
 
-    float promedio = total / num_ingresados;
+    float promedio= total / num_ingresados;
 
-    printf("El precio total de los productos: %.2f\n", total);
-    printf("El producto mas caro: %.2f\n", maximo);
-    printf("El producto mas barato: %.2f\n", minimo);
-    printf("El promedio de precios: %.2f\n", promedio);
+    printf("El precio total de los productos es: %.2f\n", total);
+    printf("El producto mas caro es: %.2f\n", maximo);
+    printf("El producto mas barato es: %.2f\n", minimo);
+    printf("El promedio de los precios es: %.2f\n", promedio);
 }
 
 
@@ -82,7 +83,7 @@ void buscarProducto(char productos[NumProduct][30], float precios[NumProduct], i
         int Buscador = 1; // Suponemos que son iguales con el producto actual que se va a comparar
         for (int j = 0; producto_buscado[j] != '\0' && productos[i][j] != '\0'; j++) {
             if (producto_buscado[j] != productos[i][j]) {
-                Buscador = 0; // Si algún carácter no coincide, no son iguales
+                Buscador = 0; // Si algún carácter no coincide, el producto comparado no es igual
                 break;
             }
         }

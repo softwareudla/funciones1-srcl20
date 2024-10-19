@@ -14,7 +14,7 @@ int main (int argc, char *argv[]) {
     do {
         num_ingresados = ingresarProductos(productos, precios);
 
-        // Menú de opciones
+        //Menú de opciones
         do {
             opcion = menu();  
 
@@ -26,7 +26,7 @@ int main (int argc, char *argv[]) {
                     buscarProducto(productos, precios, num_ingresados);
                     break;
                 case 3:
-                    printf("Fin del programa\n");
+                    printf("Saliendo del programa\n");
                     break;
                 default:
                     printf("Error. Escoja una opcion valida\n");
@@ -34,7 +34,7 @@ int main (int argc, char *argv[]) {
 
         } while(opcion != 3);
 
-        printf("¿Desea ingresar nuevos productos y repetir el proceso? (1. Si 2. No): ");
+        printf("¿Desea ingresar nuevos productos y repetir el proceso? (1.Si 2.No): ");
         scanf("%d", &continuar);
         getchar(); 
 
